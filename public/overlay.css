@@ -1,0 +1,117 @@
+#content{
+    margin-top: 14rem;
+    background: black;
+    border: solid 2px #E101A9;
+    width: 325px;
+    height: 220px;
+    color: white;
+}
+#header{
+    background: #e101a7;
+    color: black;
+    width: 100%;
+    margin: 0;
+    height: 20px;
+}
+#titleText{
+    margin: 0;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 5px;
+}
+#crossIcon{
+    float: right;
+    margin-top: 1px;
+    height: 18px;
+}
+#baseScene{
+    display: none;
+}
+#tagScene{
+    display: none;
+}
+#twitchScene{
+    display: none;
+}
+#emailScene{
+    display: none;
+}
+#finalScene{
+    display: none;
+}
+#baseText{
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+    margin: 40px 0;
+}
+#buttonBar{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  padding: 0 10px;
+}
+.baseButton{
+    border: solid 2px #E101A9;
+    color: #E101A9;
+    width: 25%;
+    display: inline-block;
+    /* height: 50px; */
+    text-align: center;
+    margin: auto;
+    line-height: 35px;
+    font-weight: initial;
+    font-family: fantasy;
+    font-size: 18px;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+.baseButton:hover{
+    background: #00d54b;
+    border: solid 2px #00d54b;
+    color: black;
+}
+.tagText{
+    color: white;
+    text-align: center;
+    color: white;
+    font-family: monospace;
+    font-size: 22px;
+    margin: 20px 0 20px 0;
+}
+.smallText{
+    font-size: 12px;
+}
+.noStyle{
+    color: white;
+}
+.tagBar{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding: 0 10px;
+    margin-top: 20px;
+}
+.tagInput{
+    width: 60%;
+    padding: 0;
+    margin: auto;
+    text-align: center;
+    display: block;
+}
+#twitchSpacer{
+    height: 26px;
+    width: 100%;
+}
+#emailSpacer{
+    height: 26px;
+    width: 100%;
+}
+#finalSpacer{
+    margin-bottom: 10px;
+}
+#enteredText{
+    font-size: 16px;
+}

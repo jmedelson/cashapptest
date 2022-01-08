@@ -1,0 +1,47 @@
+#content{
+    margin-top: 11rem;
+    background: #0bb634;
+    width: 200px;
+    height: 350px;
+    color: white;
+}
+#header{
+    text-align: center;
+    font-size: 24px;
+    padding-top: 20px;
+}
+#cashtag{
+    margin: 20px auto;
+    background: #ffffff;
+    border: none;
+    color: #000000;
+    width: 85%;
+    padding: 0;
+    text-indent: 0px;
+    text-align: center;
+    font-size: 26px;
+    display: block;
+}
+#cashtag:focus{
+    border: none;
+    outline: none;
+}
+#submit{
+    background: #15d642;
+    text-align: center;
+    width: 65%;
+    margin: auto;
+    border-radius: 30px;
+    font-size: 26px;
+    /* padding: 2px 0px; */
+    height: 50px;
+    line-height: 50px;
+}
+#submit:hover{
+    background: #16df45;
+}
+#status{
+    text-align: center;
+    font-size: 20px;
+    margin-top: 100px;
+}

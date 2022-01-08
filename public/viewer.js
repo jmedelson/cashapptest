@@ -4,13 +4,34 @@ var ebs = "";
 
 // because who wants to type this every time?
 var twitch = window.Twitch.ext;
-
+var scene = 'base';
+var tag = '';
+var email = '';
+var twitchname = '';
 // create the request options for our Twitch API calls
 var requests = {
     set: createRequest('POST', 'cycle'),
     get: createRequest('GET', 'query')
 };
 
+function renderScene(){
+    $('#baseScene').hide()
+    $('#tagScene').hide()
+    $('#twitchScene').hide()
+    $('#emailScene').hide()
+    $('#finalScene').hide()
+    if(scene == 'base'){
+        $('#baseScene').fadeIn('slow')
+    }else if(scene == 'tag'){
+        $('#tagScene').fadeIn('slow')
+    }else if(scene == 'twitch'){
+        $('#twitchScene').fadeIn('slow')
+    }else if(scene == 'email'){
+        $('#emailScene').fadeIn('slow')
+    }else if(scene == 'final'){
+        $('#finalScene').fadeIn('slow')
+    }
+}
 function createRequest(type, method) {
 
     return {
@@ -42,6 +63,7 @@ twitch.onAuthorized(function(auth) {
 
     setAuth(token);
     $.ajax(requests.get);
+    renderScene()
 });
 
 function updateBlock(hex) {
@@ -60,7 +82,42 @@ function logSuccess(hex, status) {
 }
 
 $(function() {
-
+    $('#enterButton').click(function() {
+        scene = 'tag'
+        renderScene()
+    })
+    $('.homeButton').click(function() {
+        scene = 'base'
+        $('#cashtag').text('')
+        $('#twitchname').text('')
+        $('#email').text('')
+        tag = ''
+        twitchname = ''
+        email = ''
+        renderScene()
+    })
+    $('.submitButton').click(function() {
+        if(scene == 'tag'){
+            tag = $('#inputTag').val()
+            scene = 'twitch'
+            renderScene()
+        }else if(scene == 'twitch'){
+            twitchname = $('#inputTwitch').val()
+            scene = 'email'
+            renderScene()
+        }else if(scene == 'email'){
+            email = $('#inputEmail').val()
+            $('#cashtag').text(tag)
+            $('#twitchname').text(twitchname)
+            $('#email').text(email)
+            scene = 'final'
+            renderScene()
+        }
+    })
+    $('#submit').click(function() {
+        $('#check').text("Entered!")
+        $('#submitText').text("Update")
+    })
     // when we click the cycle button
     $('#cycle').click(function() {
         if(!token) { return twitch.rig.log('Not authorized'); }
